@@ -40,7 +40,8 @@ const siteContent = {
 // Example: Update the img src for the logo
 const logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"]);
-logo.setAttribute('alt', "Great Idea! Company logo.");
+// alt is already set
+// logo.setAttribute('alt', "Great Idea! Company logo.");
 
 // Setting Content for Header / Navigation Links Bar
 const navLinks = document.querySelectorAll('nav a');
@@ -61,7 +62,45 @@ ctaButton.textContent = siteContent['cta']['button'];
 
 const ctaImg = document.getElementById("cta-img");
 ctaImg.setAttribute('src', siteContent['cta']['img-src']);
-ctaImg.setAttribute('alt', "Image of a code snippet.");
+// alt is already set
+// ctaImg.setAttribute('alt', "Image of a code snippet.");
 
 
-//Setting Content for Main Section
+// Setting Content for Main Section
+// Setting Main Content Headers
+const contentHeaders = document.querySelectorAll('h4');
+contentHeaders[0].textContent = siteContent['main-content']['features-h4'];
+contentHeaders[1].textContent = siteContent['main-content']['about-h4'];
+contentHeaders[2].textContent = siteContent['main-content']['services-h4'];
+contentHeaders[3].textContent = siteContent['main-content']['product-h4'];
+contentHeaders[4].textContent = siteContent['main-content']['vision-h4'];
+// ContentHeaders[5].textContent = siteContent['contact']['contact-h4'];
+
+// Setting Main Content Paragraph
+const contentP = document.querySelectorAll('p');
+contentP[0].textContent = siteContent['main-content']['features-content'];
+contentP[1].textContent = siteContent['main-content']['about-content'];
+contentP[2].textContent = siteContent['main-content']['services-content'];
+contentP[3].textContent = siteContent['main-content']['product-content'];
+contentP[4].textContent = siteContent['main-content']['vision-content'];
+
+// Updating Main Content middle img source
+const middleImg = document.getElementById("middle-img");
+middleImg.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
+// alt for image is already set
+
+
+// Setting Content for Contact Section
+// Setting Contact Header
+// const contactH = document.getElementsByClassName['contact h4'];
+// contactH.textContent = siteContent['contact']['contact-h4'];
+contentHeaders[5].textContent = siteContent['contact']['contact-h4'];
+
+// Setting Contact Paragraph
+contentP[5].textContent = siteContent['contact']['address'];
+contentP[6].textContent = siteContent['contact']['phone'];
+contentP[7].textContent = siteContent['contact']['email'];
+
+
+// Setting Content for Footer
+contentP[8].textContent = siteContent['footer']['copyright'];
