@@ -9,7 +9,7 @@ const siteContent = {
     "img-src": "img/logo.png"
   },
   "cta": {
-    "h1": "DOM Is Awesome",
+    "h1": "DOM <br> Is <br> Awesome",
     "button": "Get Started",
     "img-src": "img/header-img.png"
   },
@@ -28,7 +28,7 @@ const siteContent = {
   },
   "contact": {
     "contact-h4" : "Contact",
-    "address" : "123 Way 456 Street Somewhere, USA",
+    "address" : "123 Way 456 Street <br> Somewhere, USA",
     "phone" : "1 (888) 888-8888",
     "email" : "sales@greatidea.io",
   },
@@ -52,10 +52,27 @@ navLinks[3].textContent = siteContent['nav']['nav-item-4'];
 navLinks[4].textContent = siteContent['nav']['nav-item-5'];
 navLinks[5].textContent = siteContent['nav']['nav-item-6'];
 
+// Adding new Nav Links
+const postNavLink = document.createElement('a');
+// const oneText = document.createTextNode("DOM");
+// postNavLink.appendChild(oneText);
+postNavLink.appendChild(document.createTextNode("PostLink"));
+document.querySelector('nav').appendChild(postNavLink);
+// oneNavLink.createTextNode = "DOM";
+// navLinks.appendChild(oneNavLink);
+const preNavLink = document.createElement('a');
+preNavLink.appendChild(document.createTextNode("PreLink"));
+document.querySelector('nav').prepend(preNavLink);
+
+const allNavLinks = document.querySelectorAll('nav a');
+
+// Styling for Navigation Links
+allNavLinks.forEach((link) => link.style.color = 'green');
+
 
 //Setting Content for section cta
 const ctaHeaderText = document.querySelector('h1');
-ctaHeaderText.textContent = siteContent['cta']['h1'];
+ctaHeaderText.innerHTML = siteContent['cta']['h1'];
 
 const ctaButton = document.querySelector('button');
 ctaButton.textContent = siteContent['cta']['button'];
@@ -94,13 +111,16 @@ middleImg.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
 // Setting Contact Header
 // const contactH = document.getElementsByClassName['contact h4'];
 // contactH.textContent = siteContent['contact']['contact-h4'];
+// contentHeaders selector on line 71
 contentHeaders[5].textContent = siteContent['contact']['contact-h4'];
 
 // Setting Contact Paragraph
-contentP[5].textContent = siteContent['contact']['address'];
+// contentP selector on line 80
+contentP[5].innerHTML = siteContent['contact']['address'];
 contentP[6].textContent = siteContent['contact']['phone'];
 contentP[7].textContent = siteContent['contact']['email'];
 
 
 // Setting Content for Footer
+// contentP selector on line 80
 contentP[8].textContent = siteContent['footer']['copyright'];
