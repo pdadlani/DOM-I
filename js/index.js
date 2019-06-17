@@ -45,12 +45,7 @@ logo.setAttribute('src', siteContent["nav"]["img-src"]);
 
 // Setting Content for Header / Navigation Links Bar
 const navLinks = document.querySelectorAll('nav a');
-navLinks[0].textContent = siteContent['nav']['nav-item-1'];
-navLinks[1].textContent = siteContent['nav']['nav-item-2'];
-navLinks[2].textContent = siteContent['nav']['nav-item-3'];
-navLinks[3].textContent = siteContent['nav']['nav-item-4'];
-navLinks[4].textContent = siteContent['nav']['nav-item-5'];
-navLinks[5].textContent = siteContent['nav']['nav-item-6'];
+navLinks.forEach((link, i) => link.textContent = siteContent['nav'][`nav-item-${i+1}`]);
 
 // Adding new Nav Links
 const postNavLink = document.createElement('a');
@@ -111,16 +106,16 @@ middleImg.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
 // Setting Contact Header
 // const contactH = document.getElementsByClassName['contact h4'];
 // contactH.textContent = siteContent['contact']['contact-h4'];
-// contentHeaders selector on line 71
+// contentHeaders selector on line 88
 contentHeaders[5].textContent = siteContent['contact']['contact-h4'];
 
 // Setting Contact Paragraph
-// contentP selector on line 80
+// contentP selector on line 97
 contentP[5].innerHTML = siteContent['contact']['address'];
 contentP[6].textContent = siteContent['contact']['phone'];
 contentP[7].textContent = siteContent['contact']['email'];
 
 
 // Setting Content for Footer
-// contentP selector on line 80
+// contentP selector on line 97
 contentP[8].textContent = siteContent['footer']['copyright'];
