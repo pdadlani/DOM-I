@@ -9,7 +9,7 @@ const siteContent = {
     "img-src": "img/logo.png"
   },
   "cta": {
-    "h1": "DOM Is Awesome",
+    "h1": "DOM <br> Is <br> Awesome",
     "button": "Get Started",
     "img-src": "img/header-img.png"
   },
@@ -28,7 +28,7 @@ const siteContent = {
   },
   "contact": {
     "contact-h4" : "Contact",
-    "address" : "123 Way 456 Street Somewhere, USA",
+    "address" : "123 Way 456 Street <br> Somewhere, USA",
     "phone" : "1 (888) 888-8888",
     "email" : "sales@greatidea.io",
   },
@@ -38,5 +38,84 @@ const siteContent = {
 };
 
 // Example: Update the img src for the logo
-let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+const logo = document.getElementById("logo-img");
+logo.setAttribute('src', siteContent["nav"]["img-src"]);
+// alt is already set
+// logo.setAttribute('alt', "Great Idea! Company logo.");
+
+// Setting Content for Header / Navigation Links Bar
+const navLinks = document.querySelectorAll('nav a');
+navLinks.forEach((link, i) => link.textContent = siteContent['nav'][`nav-item-${i+1}`]);
+
+// Adding new Nav Links
+const postNavLink = document.createElement('a');
+// const oneText = document.createTextNode("DOM");
+// postNavLink.appendChild(oneText);
+postNavLink.appendChild(document.createTextNode("PostLink"));
+document.querySelector('nav').appendChild(postNavLink);
+// oneNavLink.createTextNode = "DOM";
+// navLinks.appendChild(oneNavLink);
+const preNavLink = document.createElement('a');
+preNavLink.appendChild(document.createTextNode("PreLink"));
+document.querySelector('nav').prepend(preNavLink);
+
+const allNavLinks = document.querySelectorAll('nav a');
+
+// Styling for Navigation Links
+allNavLinks.forEach((link) => link.style.color = 'green');
+
+
+//Setting Content for section cta
+const ctaHeaderText = document.querySelector('h1');
+ctaHeaderText.innerHTML = siteContent['cta']['h1'];
+
+const ctaButton = document.querySelector('button');
+ctaButton.textContent = siteContent['cta']['button'];
+
+const ctaImg = document.getElementById("cta-img");
+ctaImg.setAttribute('src', siteContent['cta']['img-src']);
+// alt is already set
+// ctaImg.setAttribute('alt', "Image of a code snippet.");
+
+
+// Setting Content for Main Section
+// Setting Main Content Headers
+const contentHeaders = document.querySelectorAll('h4');
+contentHeaders[0].textContent = siteContent['main-content']['features-h4'];
+contentHeaders[1].textContent = siteContent['main-content']['about-h4'];
+contentHeaders[2].textContent = siteContent['main-content']['services-h4'];
+contentHeaders[3].textContent = siteContent['main-content']['product-h4'];
+contentHeaders[4].textContent = siteContent['main-content']['vision-h4'];
+// ContentHeaders[5].textContent = siteContent['contact']['contact-h4'];
+
+// Setting Main Content Paragraph
+const contentP = document.querySelectorAll('p');
+contentP[0].textContent = siteContent['main-content']['features-content'];
+contentP[1].textContent = siteContent['main-content']['about-content'];
+contentP[2].textContent = siteContent['main-content']['services-content'];
+contentP[3].textContent = siteContent['main-content']['product-content'];
+contentP[4].textContent = siteContent['main-content']['vision-content'];
+
+// Updating Main Content middle img source
+const middleImg = document.getElementById("middle-img");
+middleImg.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
+// alt for image is already set
+
+
+// Setting Content for Contact Section
+// Setting Contact Header
+// const contactH = document.getElementsByClassName['contact h4'];
+// contactH.textContent = siteContent['contact']['contact-h4'];
+// contentHeaders selector on line 88
+contentHeaders[5].textContent = siteContent['contact']['contact-h4'];
+
+// Setting Contact Paragraph
+// contentP selector on line 97
+contentP[5].innerHTML = siteContent['contact']['address'];
+contentP[6].textContent = siteContent['contact']['phone'];
+contentP[7].textContent = siteContent['contact']['email'];
+
+
+// Setting Content for Footer
+// contentP selector on line 97
+contentP[8].textContent = siteContent['footer']['copyright'];
