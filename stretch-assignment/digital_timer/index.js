@@ -13,10 +13,13 @@ let timer = 0;
 // variable to lock start/reset button
 let lock = false;
 
+
 button.addEventListener('click', event => {
   if (!lock) {
     // lock button upon start of timer
     lock = true;
+    button.innerHTML = 'Reset';
+
 
     // setting / resetting timer to zero
     timer = 0;
@@ -34,13 +37,13 @@ button.addEventListener('click', event => {
       secondTens.textContent = Math.floor(timer / 10000) % 10;
 
       // once timer hits maximum (10 seconds in this case)
-      if (timer >= 10000) {
+      if (timer >= 1000) {
 
         // unlock button, clear, and set text to "Reset"
         lock = false;
         clearInterval(interval);
-        button.innerHTML = 'Reset';
-        
+        button.innerHTML = 'Reset & Start';
+
         // timerDigits.forEach(digit => digit.style.color='red');
         timerDigits.forEach(digit => digit.classList.add('redDigit'));
       }
