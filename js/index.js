@@ -44,8 +44,10 @@ logo.setAttribute('src', siteContent["nav"]["img-src"]);
 // logo.setAttribute('alt', "Great Idea! Company logo.");
 
 // Setting Content for Header / Navigation Links Bar
-const navLinks = document.querySelectorAll('nav a');
-navLinks.forEach((link, i) => link.textContent = siteContent['nav'][`nav-item-${i+1}`]);
+let navLinks = document.querySelectorAll('nav a');
+navLinks.forEach((link, i) => {
+  link.textContent = siteContent['nav'][`nav-item-${i + 1}`]
+});
 
 // Adding new Nav Links
 const postNavLink = document.createElement('a');
@@ -74,8 +76,6 @@ ctaButton.textContent = siteContent['cta']['button'];
 
 const ctaImg = document.getElementById("cta-img");
 ctaImg.setAttribute('src', siteContent['cta']['img-src']);
-// alt is already set
-// ctaImg.setAttribute('alt', "Image of a code snippet.");
 
 
 // Setting Content for Main Section
@@ -106,16 +106,16 @@ middleImg.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
 // Setting Contact Header
 // const contactH = document.getElementsByClassName['contact h4'];
 // contactH.textContent = siteContent['contact']['contact-h4'];
-// contentHeaders selector on line 88
+// contentHeaders selector on line 83
 contentHeaders[5].textContent = siteContent['contact']['contact-h4'];
 
 // Setting Contact Paragraph
-// contentP selector on line 97
+// contentP selector on line 92
 contentP[5].innerHTML = siteContent['contact']['address'];
 contentP[6].textContent = siteContent['contact']['phone'];
 contentP[7].textContent = siteContent['contact']['email'];
 
 
 // Setting Content for Footer
-// contentP selector on line 97
+// contentP selector on line 92
 contentP[8].textContent = siteContent['footer']['copyright'];
